@@ -6,6 +6,10 @@ name = "pypi"
 [packages]
 django = "*"
 psycopg2-binary = "*"
+python-dotenv = "*"
+dj-database-url = "*"
+django-on-heroku = "*"
+django-cors-headers = "*"
 
 [dev-packages]
 
