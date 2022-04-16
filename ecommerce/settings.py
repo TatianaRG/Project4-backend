@@ -111,7 +111,7 @@ if ENV != 'DEV':
 else:
     DATABASES['default'] = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'ecommerce',  # < --- make sure you chage this
+        'NAME': 'ecommerce1',  # < --- make sure you chage this
         'HOST': 'localhost',
         'PORT': 5432
     }

@@ -15,3 +15,10 @@ class CategorySerializer(serializers.ModelSerializer):
     class Meta:
       model = Category
       fields = ('__all__')
+
+
+class PopulatedCategorySerializer(CategorySerializer):
+  products = ProductSerializer(many= True)
+
+class PopulatedProductSerializer(ProductSerializer):
+  category = CategorySerializer()

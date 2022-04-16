@@ -16,6 +16,7 @@ class Product(models.Model):
     description = models.CharField(max_length=100)
     image = models.CharField(max_length=300)
     price = models.PositiveSmallIntegerField()
+    pub_date = models.DateField(auto_now_add=True)
     category = models.ForeignKey(
         Category, related_name='products', on_delete=models.CASCADE)
 
