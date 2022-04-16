@@ -11,6 +11,7 @@ dj-database-url = "*"
 django-on-heroku = "*"
 django-cors-headers = "*"
 djangorestframework = "*"
+pyjwt = "*"
 
 [dev-packages]
 
