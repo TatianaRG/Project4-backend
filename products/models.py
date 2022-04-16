@@ -1,4 +1,3 @@
-from multiprocessing import Condition
 from django.db import models
 
 # Create your models here.
