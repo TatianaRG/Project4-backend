@@ -172,6 +172,6 @@ REST_FRAMEWORK = {
 
 AUTH_USER_MODEL = 'jwt_auth.CustomUser'
 
-CSRF_TRUSTED_ORIGINS = ['https://rewearapp.herokuapp.com']
+CSRF_TRUSTED_ORIGINS = ['https://myrewearapp.herokuapp.com']
 
 django_on_heroku.settings(locals())
