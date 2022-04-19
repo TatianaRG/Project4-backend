@@ -66,3 +66,19 @@ class ProfileView(APIView):
       user = CustomUser.objects.get(pk=request.user.id)
       serialized_user = PopulatedUserSerializer(user)
       return Response(serialized_user.data, status=status.HTTP_200_OK)
+
+class UserDetailView(APIView):
+    permission_classes = (IsAuthenticated, )
+
+    def get(self, request, pk):
+      user = CustomUser.objects.get(pk=pk)
+      serialized_user = UserSerializer(user)
+      return Response(serialized_user.data, status = status.HTTP_200_OK)
+
+    def put(self, request, pk):
+      user = CustomUser.objects.get(pk=pk)
+      updated_user = UserSerializer(user, data=request.data)
+      if updated_user.is_valid():
+          updated_user.save()
+          return Response(updated_user.data, status = status.HTTP_202_ACCEPTED)
+      return Response(updated_user.data, status = status.HTTP_422_UNPROCESSABLE_ENTITY)

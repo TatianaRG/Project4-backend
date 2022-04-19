@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'jwt_auth',
     'products',
+    'basket',
 
 ]
 
@@ -112,7 +113,7 @@ if ENV != 'DEV':
 else:
     DATABASES['default'] = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'ecommerce1',  # < --- make sure you change this
+        'NAME': 'ecommerce2',  # < --- make sure you change this
         'HOST': 'localhost',
         'PORT': 5432
     }
