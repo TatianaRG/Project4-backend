@@ -1,4 +1,5 @@
 
+from email.policy import HTTP
 from xml.dom import NotFoundErr
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -37,7 +38,11 @@ class ProductDetailView(APIView):
     serialized_product = PopulatedProductSerializer(product)
     return Response(serialized_product.data, status= status.HTTP_200_OK)
 
-
+class RecentListView(APIView):
+    def get(self, _request):
+      recently_added = Product.objects.all().order_by('-pub_date')[:3]
+      serializer = ProductSerializer(recently_added, many=True)
+      return Response(serializer.data, status=status.HTTP_200_OK)
 
 
 
