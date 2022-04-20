@@ -40,7 +40,7 @@ class ProductDetailView(APIView):
 
 class RecentListView(APIView):
     def get(self, _request):
-      recently_added = Product.objects.all().order_by('-pub_date')[:3]
+      recently_added = Product.objects.all().order_by('-pub_date')[:5]
       serializer = ProductSerializer(recently_added, many=True)
       return Response(serializer.data, status=status.HTTP_200_OK)
 
